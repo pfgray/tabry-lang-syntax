@@ -1,0 +1,25 @@
+{
+  "name": "tabry-lang-syntax",
+  "displayName": "tabry-lang-syntax",
+  "description": "Syntax highlighting support for the Tabry language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "tabry",
+      "aliases": ["Tabry", "tabry"],
+      "extensions": [".tabry"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "tabry",
+      "scopeName": "source.tabry",
+      "path": "./syntaxes/tabry.tmLanguage.json"
+    }]
+  }
+}

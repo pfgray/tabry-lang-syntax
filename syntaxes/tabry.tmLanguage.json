@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Tabry",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#at_identifier"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#ctrl-flow"
+    }
+  ],
+  "repository": {
+    "at_identifier": {
+      "patterns": [
+        {
+          "name": "variable.other.tpl",
+          "match": "\\b@[a-zA-Z_][a-zA-Z0-9_-]*"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "begin": "#",
+          "end": "\\n",
+          "name": "comment.line.number-sign"
+        }
+      ]
+    },
+    "ctrl-flow": {
+      "patterns": [
+        {
+          "name": "keyword.control.tabry",
+          "match": "\\b(shell|include)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.other.tabry",
+          "match": "( |^)(\\b(cmd|reqd|dir|file|const|arg|varargs|opts|sub|flag|flagarg|defopts|defargs|title)\\b)"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.tabry",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.tabry",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scopeName": "source.tabry"
+}

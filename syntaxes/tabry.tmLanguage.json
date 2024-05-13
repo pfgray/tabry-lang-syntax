@@ -16,14 +16,17 @@
     },
     {
       "include": "#ctrl-flow"
+    },
+    {
+      "include": "#variables"
     }
   ],
   "repository": {
     "at_identifier": {
       "patterns": [
         {
-          "name": "variable.other.tpl",
-          "match": "\\b@[a-zA-Z_][a-zA-Z0-9_-]*"
+          "name": "entity.name.type.class",
+          "match": "\\B@[a-zA-Z_][a-zA-Z0-9_-]*"
         }
       ]
     },
@@ -40,7 +43,15 @@
       "patterns": [
         {
           "name": "keyword.control.tabry",
-          "match": "\\b(shell|include)\\b"
+          "match": "\\b(include)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.tabry",
+          "match": "( |^)(\\b(cmd|reqd|dir|file|const|arg|varargs|opt|opts|sub|shell|flag|flagarg|defopts|defargs|title)\\b)"
         }
       ]
     },
@@ -48,7 +59,7 @@
       "patterns": [
         {
           "name": "keyword.other.tabry",
-          "match": "( |^)(\\b(cmd|reqd|dir|file|const|arg|varargs|opts|sub|flag|flagarg|defopts|defargs|title)\\b)"
+          "match": "( |^)(\\b(desc|cmd|reqd|dir|file|const|arg|varargs|opt|opts|sub|shell|flag|flagarg|defopts|defargs|title)\\b)"
         }
       ]
     },
